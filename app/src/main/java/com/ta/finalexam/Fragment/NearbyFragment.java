@@ -80,6 +80,7 @@ public class NearbyFragment extends HeaderFragment implements OnMapReadyCallback
         dummylocation = new LatLng(21.005661, 105.843172);
         MarkerOptions mMarker = new MarkerOptions().position(dummylocation);
         mMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.map_pin));
+        mMap.addMarker(mMarker);
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(dummylocation, 15));
     }
 
