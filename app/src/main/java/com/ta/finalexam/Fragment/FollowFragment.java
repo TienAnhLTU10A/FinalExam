@@ -71,7 +71,7 @@ public class FollowFragment extends BaseHeaderListFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_follow_screen_;
+        return R.layout.fragment_follow_screen;
     }
 
     @Override

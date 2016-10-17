@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.ta.finalexam.Bean.HeaderControlBean;
 import com.ta.finalexam.Constant.HeaderOption;
 import com.ta.finalexam.Fragment.FollowFragment;
+import com.ta.finalexam.Fragment.NearbyFragment;
 
 import butterknife.BindView;
 import vn.app.base.activity.CommonActivity;
@@ -59,7 +60,7 @@ public class MainActivity extends CommonActivity {
 
     @Override
     public void initView() {
-        setUpInitScreen(new FollowFragment(), null);
+        setUpInitScreen(new NearbyFragment(), null);
     }
 
     @Override
