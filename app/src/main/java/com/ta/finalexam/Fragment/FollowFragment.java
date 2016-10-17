@@ -19,12 +19,12 @@ import vn.app.base.callback.OnRecyclerViewItemClick;
  * Created by Veteran Commander on 10/14/2016.
  */
 
-public class DummyFragment extends BaseHeaderListFragment {
+public class FollowFragment extends BaseHeaderListFragment {
     List<DummyFollowItem> dummyFollowItemList;
     FollowListAdapter followListAdapter;
 
-    public static DummyFragment newInstance(){
-        DummyFragment newFragment = new DummyFragment();
+    public static FollowFragment newInstance(){
+        FollowFragment newFragment = new FollowFragment();
         return newFragment;
     }
 
@@ -71,7 +71,7 @@ public class DummyFragment extends BaseHeaderListFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.dummy_layout;
+        return R.layout.fragment_follow_screen_;
     }
 
     @Override
