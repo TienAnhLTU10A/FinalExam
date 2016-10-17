@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#FF7E68D3</color>
+    <color name="colorPrimaryDark">#FF7E68D3</color>
     <color name="colorAccent">#FF4081</color>
     <color name="color_btn_follow_bg">#ec2677</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="color_btn_fap">#4bc0fe</color>
+
 </resources>
