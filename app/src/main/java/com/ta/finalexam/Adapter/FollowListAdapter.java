@@ -16,6 +16,11 @@ import vn.app.base.util.UiUtil;
 
 public class FollowListAdapter extends AdapterWithItemClick<FollowListViewHolder> {
     public List<DummyFollowItem> dummyFollowItemList;
+
+    public FollowListAdapter(List<DummyFollowItem> dummyFollowItemList) {
+        this.dummyFollowItemList = dummyFollowItemList;
+    }
+
     @Override
     public FollowListViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new FollowListViewHolder(UiUtil.inflate(parent, FollowListViewHolder.LAYOUT_ID, false));
