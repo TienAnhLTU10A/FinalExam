@@ -11,4 +11,5 @@
     <color name="colorPurple">#7d67d2</color>
     <color name="colorBlueDam">#6d9ff2</color>
     <color name="colorRed">#e72573</color>
+    <color name="color_btn_follow_bg">#ec2677</color>
 </resources>

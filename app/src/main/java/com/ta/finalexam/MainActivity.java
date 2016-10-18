@@ -1,28 +1,57 @@
 package com.ta.finalexam;
 
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-import com.ta.finalexam.Fragment.LoginFragment;
+import com.ta.finalexam.Bean.HeaderControlBean;
+import com.ta.finalexam.Constant.HeaderOption;
+import com.ta.finalexam.Fragment.DummyFragment;
 
-import vn.app.base.activity.BaseActivity;
-import vn.app.base.util.FragmentUtil;
+import butterknife.BindView;
+import vn.app.base.activity.CommonActivity;
+import vn.app.base.util.StringUtil;
+import vn.app.base.util.UiUtil;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends CommonActivity {
+
+    @BindView(R.id.toolbar)
+    RelativeLayout rlToolbar;
+
+    @BindView(R.id.headerMenu)
+    ImageView ivMenu;
+
+    @BindView(R.id.headerBack)
+    ImageView ivBack;
+
+    @BindView(R.id.tv_delete)
+    TextView tvDelete;
+
+    @BindView(R.id.tv_update)
+    TextView tvUpdate;
+
+    @BindView(R.id.headerTitle)
+    TextView tvTitle;
+
+
 
     @Override
     protected String getNoConnectionMessage() {
-        return "No internet connection";
+        return getString(R.string.dialog_error_no_connection);
     }
 
     @Override
     protected String getErrorAPIMessage() {
-        return "No internet connection";
+        return getString(R.string.dialog_error_no_connection);
     }
 
     @Override
     protected String getTimeOutMessage() {
-        return "Server timeout";
+        return getString(R.string.dialog_error_timeout);
     }
 
     @Override
@@ -32,11 +61,94 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        FragmentUtil.pushFragment(this, LoginFragment.newInstance(),null);
+        setUpInitScreen(new DummyFragment(), null);
     }
 
     @Override
     public void initData() {
 
+    }
+
+    @Override
+    public void onCommonDataHandle(Bundle bundle) {
+
+    }
+
+    @Override
+    public void onCommonUIHandle(Bundle bundle) {
+        if (bundle == null) {
+            return;
+        }
+        if (bundle.containsKey(HeaderOption.HEADER_CONTROL)) {
+            HeaderControlBean headerControlBean = bundle.getParcelable(HeaderOption.HEADER_CONTROL);
+            if (headerControlBean != null) {
+                handleHeaderUI(headerControlBean);
+            }
+        }
+    }
+
+    private void handleHeaderUI(HeaderControlBean headerControlBean) {
+        if (headerControlBean.headerOptions != null && headerControlBean.headerOptions.length > 0) {
+            if (headerControlBean.headerOptions[0] == HeaderOption.SHOW_HEADER) {
+                UiUtil.showView(rlToolbar);
+            } else if (headerControlBean.headerOptions[0] == HeaderOption.HIDE_HEADER) {
+                UiUtil.hideView(rlToolbar, true);
+            }
+            if (headerControlBean.headerOptions.length > 1 && headerControlBean.headerOptions[1] > 0) {
+                handleLeftIcon(headerControlBean.headerOptions[1]);
+                if (headerControlBean.headerOptions.length > 2 && headerControlBean.headerOptions[2] > 0) {
+                    handleRightIcon(headerControlBean.headerOptions[2]);
+                } else {
+                    showAndHideIconRight(null);
+                }
+            } else {
+                showAndHideIconLeft(ivMenu);
+            }
+        }
+        if (StringUtil.checkStringValid(headerControlBean.title)) {
+            StringUtil.displayText(headerControlBean.title, tvTitle);
+        }
+    }
+
+    private void handleLeftIcon(int value) {
+        switch (value) {
+            case HeaderOption.LEFT_NO_OPTION:
+                showAndHideIconLeft(null);
+                break;
+            case HeaderOption.LEFT_MENU:
+                showAndHideIconLeft(ivMenu);
+                break;
+            case HeaderOption.LEFT_BACK:
+                showAndHideIconLeft(ivBack);
+                break;
+        }
+    }
+
+    private void handleRightIcon(int value) {
+        switch (value) {
+            case HeaderOption.RIGHT_NO_OPTION:
+                showAndHideIconRight(null);
+                break;
+            case HeaderOption.RIGHT_DELETE:
+                showAndHideIconRight(tvDelete);
+                break;
+            case HeaderOption.RIGHT_UPDATE:
+                showAndHideIconRight(tvUpdate);
+                break;
+        }
+    }
+
+    private void showAndHideIconLeft(View target) {
+        showOrHide(ivMenu, target);
+        showOrHide(ivBack, target);
+    }
+
+    private void showAndHideIconRight(View target) {
+        showOrHide(tvDelete, target);
+        showOrHide(tvUpdate, target);
+    }
+
+    protected void showOrHide(View subject, View target) {
+        subject.setVisibility(subject == target ? View.VISIBLE : View.GONE);
     }
 }
