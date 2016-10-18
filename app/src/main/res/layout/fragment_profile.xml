@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ta.finalexam.MainActivity">
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:id="@+id/toolbar_spacer"
-        android:background="@color/transparent"/>
-
+    android:background="@color/colorPurple">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -27,7 +18,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:padding="5dp"/>
-        
+
         <View
             android:layout_width="100dp"
             android:layout_height="match_parent"
@@ -48,22 +39,53 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/headerTitle"
+            android:hint="Profile"
             android:layout_toLeftOf="@id/headerIconRight"
             android:layout_toRightOf="@id/headerIconLeft"
-            android:textColor="@color/white"
             android:textSize="25dp"
             android:textColorHint="@color/white"
             android:gravity="left|center"
             android:textStyle="bold"/>
-        
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/headerUpdate"
+            android:layout_alignRight="@+id/headerIconRight"
+            android:hint="Update"
+            android:layout_centerVertical="true"
+            android:textSize="25dp"
+            android:gravity="center|right"
+            android:textStyle="bold"
+            android:textColorHint="@color/white"
+            android:padding="5dp"
+            />
+
     </RelativeLayout>
 
-    <FrameLayout
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/container"
+        android:id="@+id/swipe_refresh_profile"
+        android:layout_below="@id/toolbar">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycerProfile"></android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/icon_camera"
+        android:background="@color/colorBlue"
+        android:id="@+id/fabProfile"
+        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-    </FrameLayout>
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerCrop"/>
+
+
+
 </RelativeLayout>

@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ta.finalexam.MainActivity">
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:id="@+id/toolbar_spacer"
-        android:background="@color/transparent"/>
+    android:background="@color/colorPurple"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -27,7 +20,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:padding="5dp"/>
-        
+
         <View
             android:layout_width="100dp"
             android:layout_height="match_parent"
@@ -48,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/headerTitle"
+            android:hint="User"
             android:layout_toLeftOf="@id/headerIconRight"
             android:layout_toRightOf="@id/headerIconLeft"
             android:textColor="@color/white"
@@ -55,15 +49,17 @@
             android:textColorHint="@color/white"
             android:gravity="left|center"
             android:textStyle="bold"/>
-        
+
     </RelativeLayout>
 
-    <FrameLayout
+    <android.support.v4.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/container"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-    </FrameLayout>
-</RelativeLayout>
+        android:id="@+id/swipe_refresh_user">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycerUser"></android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>
