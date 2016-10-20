@@ -30,7 +30,7 @@
         <Button
             android:id="@+id/btn_follow"
             android:layout_width="90dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginLeft="66dp"
             android:background="@drawable/button_shape"

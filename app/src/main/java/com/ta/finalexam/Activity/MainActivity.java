@@ -1,4 +1,4 @@
-package com.ta.finalexam;
+package com.ta.finalexam.Activity;
 
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -10,10 +10,12 @@ import android.widget.TextView;
 
 import com.ta.finalexam.Bean.HeaderControlBean;
 import com.ta.finalexam.Constant.HeaderOption;
-import com.ta.finalexam.Fragment.DummyFragment;
+import com.ta.finalexam.Fragment.Navigator_Menu;
+import com.ta.finalexam.R;
 
 import butterknife.BindView;
 import vn.app.base.activity.CommonActivity;
+import vn.app.base.util.FragmentUtil;
 import vn.app.base.util.StringUtil;
 import vn.app.base.util.UiUtil;
 
@@ -61,7 +63,7 @@ public class MainActivity extends CommonActivity {
 
     @Override
     public void initView() {
-        setUpInitScreen(new DummyFragment(), null);
+        FragmentUtil.pushFragment(this, new Navigator_Menu() ,null);
     }
 
     @Override

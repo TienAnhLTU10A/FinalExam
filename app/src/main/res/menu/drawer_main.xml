@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/menu_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_post"
+            android:icon="@drawable/icon_camera"
+            android:title="Post" />
+        <item
+            android:id="@+id/nav_favourite"
+            android:icon="@drawable/menu_favourite"
+            android:title="Favourite" />
+
+        <item
+            android:id="@+id/nav_nearby"
+            android:icon="@drawable/menu_around"
+            android:title="Nearby" />
+
+        <item
+            android:id="@+id/nav_follow"
+            android:icon="@drawable/menu_follow"
+            android:title="Follow" />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/menu_logout"
+            android:title="Logout" />
+    </group>
+
+    <item android:title="Other">
+        <menu>
+            <item
+                android:id="@+id/nav_about_us"
+                android:title="About us" />
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:title="Privacy Policites" />
+        </menu>
+    </item>
+
+</menu>
