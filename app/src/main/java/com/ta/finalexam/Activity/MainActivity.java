@@ -1,7 +1,5 @@
 package com.ta.finalexam.Activity;
 
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -40,7 +38,6 @@ public class MainActivity extends CommonActivity {
     TextView tvTitle;
 
 
-
     @Override
     protected String getNoConnectionMessage() {
         return getString(R.string.dialog_error_no_connection);
@@ -63,7 +60,7 @@ public class MainActivity extends CommonActivity {
 
     @Override
     public void initView() {
-        FragmentUtil.pushFragment(this, new Navigator_Menu() ,null);
+        FragmentUtil.replaceFragment(getSupportFragmentManager(), Navigator_Menu.newInstance(), null);
     }
 
     @Override
