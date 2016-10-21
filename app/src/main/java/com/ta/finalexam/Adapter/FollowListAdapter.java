@@ -3,7 +3,7 @@ package com.ta.finalexam.Adapter;
 import android.view.ViewGroup;
 
 import com.ta.finalexam.Adapter.ViewHolder.FollowListViewHolder;
-import com.ta.finalexam.DummyFollowItem;
+import com.ta.finalexam.Dummy.DummyFollowItem;
 
 import java.util.List;
 

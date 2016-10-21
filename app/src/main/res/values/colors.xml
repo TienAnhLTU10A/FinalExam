@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="color_btn_follow_bg">#ec2677</color>
+    <color name="purple">#7e68d2</color>
+    <color name="colorPrimary_purple">#7e68d3</color>
+    <color name="colorPurpleTransparent">#a07d67d2</color>
+    <color name="color_btn_skip_bg">#4bc1fe</color>
 </resources>

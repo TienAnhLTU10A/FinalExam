@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.ta.finalexam.Adapter.FollowListAdapter;
 import com.ta.finalexam.Constant.HeaderOption;
-import com.ta.finalexam.DummyFollowItem;
+import com.ta.finalexam.Dummy.DummyFollowItem;
 import com.ta.finalexam.R;
 
 import java.util.ArrayList;
@@ -27,6 +27,7 @@ public class FollowFragment extends BaseHeaderListFragment {
         FollowFragment newFragment = new FollowFragment();
         return newFragment;
     }
+
 
 
     @Override
@@ -86,6 +87,8 @@ public class FollowFragment extends BaseHeaderListFragment {
 
     @Override
     public String getScreenTitle() {
-        return "Just Dummy Fragment";
+        return "Follow";
     }
+
+
 }

@@ -2,12 +2,10 @@ package com.ta.finalexam.Adapter.ViewHolder;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.siyamed.shapeimageview.RoundedImageView;
-import com.ta.finalexam.DummyFollowItem;
+import com.ta.finalexam.Dummy.DummyFollowItem;
 import com.ta.finalexam.R;
 
 import butterknife.BindView;

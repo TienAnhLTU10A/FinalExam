@@ -10,6 +10,7 @@ import com.ta.finalexam.Bean.HeaderControlBean;
 import com.ta.finalexam.Constant.HeaderOption;
 import com.ta.finalexam.Fragment.FollowFragment;
 import com.ta.finalexam.Fragment.NearbyFragment;
+import com.ta.finalexam.Fragment.TutorialFragment;
 
 import butterknife.BindView;
 import vn.app.base.activity.CommonActivity;
@@ -60,7 +61,7 @@ public class MainActivity extends CommonActivity {
 
     @Override
     public void initView() {
-        setUpInitScreen(new NearbyFragment(), null);
+        setUpInitScreen( TutorialFragment.newInstance(), null);
     }
 
     @Override
