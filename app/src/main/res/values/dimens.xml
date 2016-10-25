@@ -11,4 +11,8 @@
     <dimen name="ImageUpload_layout_mar_t">20dp</dimen>
     <dimen name="profile_width">85dp</dimen>
     <dimen name="profile_height">85dp</dimen>
+
+    <dimen name="ad_close_w_h">40dp</dimen>
+    <dimen name="ad_close_mar">10dp</dimen>
+    <dimen name="ad_close_pad">5dp</dimen>
 </resources>
