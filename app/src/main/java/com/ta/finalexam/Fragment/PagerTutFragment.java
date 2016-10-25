@@ -43,7 +43,7 @@ public class PagerTutFragment extends NoHeaderFragment {
     public static PagerTutFragment newInstance(TutorialBean tutorialBean, User user) {
         PagerTutFragment newFragment = new PagerTutFragment();
         Bundle bundle = new Bundle();
-        bundle.putString(TUT_AVA,user.avatar);
+        bundle.putString(TUT_AVA, user.avatar);
         bundle.putString(TUT_TITLE, tutorialBean.title);
         bundle.putString(TUT_IMG, tutorialBean.image);
         bundle.putBoolean(TUT_SHOWAVA, tutorialBean.showAvatar);
@@ -73,11 +73,15 @@ public class PagerTutFragment extends NoHeaderFragment {
     protected void initData() {
         if (showAva == false) {
             ivAvatar.setVisibility(View.GONE);
-        } else if (showAva == true){
-            ImageLoader.loadImage(getContext(),image,ivAvatar);
+        } else if (showAva == true) {
+            if (userAva.equals(null)) {
+                ivAvatar.setVisibility(View.GONE);
+            } else {
+                ImageLoader.loadImage(getContext(), userAva, ivAvatar);
+            }
         }
-        StringUtil.displayText(title,tvTutorial);
-        ImageLoader.loadImage(getContext(),image,imBg);
+        StringUtil.displayText(title, tvTutorial);
+        ImageLoader.loadImage(getContext(), image, imBg);
 
     }
 }

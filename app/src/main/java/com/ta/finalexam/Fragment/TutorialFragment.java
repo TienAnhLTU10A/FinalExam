@@ -37,9 +37,10 @@ public class TutorialFragment extends NoHeaderFragment {
     Button btnSkip;
     @BindView(R.id.tut_indicator)
     CircleIndicator indicator;
+
     @OnClick(R.id.btn_tut_skip)
-    public void onSkip(){
-        Toast.makeText(getActivity(),btnSkip.getText().toString(),Toast.LENGTH_SHORT).show();
+    public void onSkip() {
+        Toast.makeText(getActivity(), btnSkip.getText().toString(), Toast.LENGTH_SHORT).show();
         //go to home screen
     }
 
@@ -60,18 +61,21 @@ public class TutorialFragment extends NoHeaderFragment {
 
     @Override
     protected void initData() {
-        getDatatutorial();
+        if (dataTut == null) {
+            getDatatutorial();
+        } else {
+            handleTutData(dataTut);
+        }
+
     }
 
-    private void getDatatutorial(){
+    private void getDatatutorial() {
         TutRequest tutRequest = new TutRequest();
         tutRequest.setRequestCallBack(new ApiObjectCallBack<TutorialResponse>() {
             @Override
             public void onSuccess(TutorialResponse data) {
-                dataTut = data.data;
-                tutViewPagerAdapter = new TutViewPagerAdapter(getChildFragmentManager(),dataTut);
-                viewPager.setAdapter(tutViewPagerAdapter);
-                indicator.setViewPager(viewPager);
+                initialResponseHandled();
+                handleTutData(data.data);
             }
 
             @Override
@@ -80,6 +84,12 @@ public class TutorialFragment extends NoHeaderFragment {
             }
         });
         tutRequest.execute();
+    }
+
+    private void handleTutData(DataTut getedData) {
+        tutViewPagerAdapter = new TutViewPagerAdapter(getChildFragmentManager(), getedData);
+        viewPager.setAdapter(tutViewPagerAdapter);
+        indicator.setViewPager(viewPager);
     }
 
 
