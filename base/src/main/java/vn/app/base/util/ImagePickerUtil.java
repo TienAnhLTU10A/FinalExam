@@ -21,7 +21,7 @@ import java.util.List;
 public class ImagePickerUtil {
 
     public static final int PICTURE_PICKER_REQUEST_CODE = 6969;
-
+    public final static int PICTURE_CAPTURE_REQUEST_CODE = 1034;
     public static final int PICTURE_CROP_REQUEST_CODE = 9696;
 
     public Uri outputFileUri;

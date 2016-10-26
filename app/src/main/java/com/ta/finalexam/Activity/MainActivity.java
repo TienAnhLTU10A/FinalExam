@@ -8,12 +8,11 @@ import android.widget.TextView;
 
 import com.ta.finalexam.Bean.HeaderControlBean;
 import com.ta.finalexam.Constant.HeaderOption;
-import com.ta.finalexam.Fragment.Navigator_Menu;
+import com.ta.finalexam.Fragment.FragmentImageUpload;
 import com.ta.finalexam.R;
 
 import butterknife.BindView;
 import vn.app.base.activity.CommonActivity;
-import vn.app.base.util.FragmentUtil;
 import vn.app.base.util.StringUtil;
 import vn.app.base.util.UiUtil;
 
@@ -60,7 +59,7 @@ public class MainActivity extends CommonActivity {
 
     @Override
     public void initView() {
-        FragmentUtil.replaceFragment(getSupportFragmentManager(), Navigator_Menu.newInstance(), null);
+        setUpInitScreen(FragmentImageUpload.newInstance(), null);
     }
 
     @Override

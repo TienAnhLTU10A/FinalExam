@@ -1,4 +1,4 @@
-package com.ta.finalexam.Helper;
+package com.ta.finalexam.Helper.animate;
 
 import android.content.Context;
 import android.support.design.widget.CoordinatorLayout;

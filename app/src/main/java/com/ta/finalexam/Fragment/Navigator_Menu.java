@@ -201,14 +201,12 @@ public class Navigator_Menu extends CommonFragment implements View.OnClickListen
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        Activity activity;
-        if (context instanceof Activity) {
-            activity = (Activity) context;
-            mCallbacks = (NavigationDrawerCallbacks) activity;
+//        Activity activity;
+//        if (context instanceof Activity) {
+//            activity = (Activity) context;
+//            mCallbacks = (NavigationDrawerCallbacks) activity;
         }
 
-
-    }
 
     @Override
     public void onDetach() {
