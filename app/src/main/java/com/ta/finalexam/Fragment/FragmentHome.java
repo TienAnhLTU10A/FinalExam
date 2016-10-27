@@ -13,7 +13,9 @@ import com.ta.finalexam.Bean.HomeBean.HomeBean;
 import com.ta.finalexam.Helper.animate.ZoomOutPageTransformer;
 import com.ta.finalexam.R;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -68,21 +70,7 @@ public class FragmentHome extends BaseHeaderFragment implements Navigator_Menu.N
 
     }
 
-    private void getDataHome() {
-        HomeRequest homeRequest = new HomeRequest();
-        homeRequest.setRequestCallBack(new ApiObjectCallBack<HomeResponse>() {
-            @Override
-            public void onSuccess(HomeResponse data) {
 
-            }
-
-            @Override
-            public void onFail(int failCode, String message) {
-
-            }
-        });
-        homeRequest.execute();
-    }
 
     private void handleHomeData(HomeBean home) {
         vAdapter = new ViewPagerAdapterHome(getChildFragmentManager(), home);

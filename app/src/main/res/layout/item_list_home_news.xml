@@ -36,6 +36,8 @@
             android:background="@drawable/button_shape"
             android:text="Following"
             android:textColor="#FFFFFF"
+            android:clickable="true"
+            android:enabled="true"
             android:textSize="15sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -77,12 +79,14 @@
         android:id="@+id/imageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        app:srcCompat="@drawable/icon_favourite"
+        android:layout_below="@+id/ivPhotoCover"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_below="@id/ivPhotoCover"
-        app:srcCompat="@drawable/icon_favourite" />
+        android:layout_alignParentEnd="true"
+        android:clickable="true"
+        android:enabled="true" />
 
 
 </RelativeLayout>

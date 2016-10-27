@@ -4,7 +4,7 @@ package com.ta.finalexam.Constant;
  * Created by kooryy2 on 10/25/2016.
  */
 
-public class ApiStringConstance {
+public class ApiUrlConstance {
 
     public static final String URL_HOME = "https://polar-plains-86888.herokuapp.com/api/home";
 
