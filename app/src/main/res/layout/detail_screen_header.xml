@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -11,14 +12,15 @@
 
 
         <LinearLayout
-            android:id="@+id/layout_title"
+            android:id="@+id/layout_title_detail_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <com.github.siyamed.shapeimageview.RoundedImageView
-                android:id="@+id/ivProfile"
-                android:layout_width="50dp"
+                android:id="@+id/ivProfile_detail_header"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="50dp"
                 android:layout_margin="@dimen/photo_padding_home"
                 android:src="@drawable/dummy_avatar"
@@ -26,50 +28,53 @@
                 app:siSquare="true" />
 
             <TextView
-                android:id="@+id/tvName"
-                android:layout_width="150dp"
+                android:id="@+id/tvName_detail_header"
+                android:layout_width="0dp"
+                android:layout_weight="5"
                 android:layout_height="30dp"
                 android:layout_gravity="center" />
 
             <Button
-                android:id="@+id/btn_follow"
-                android:layout_width="90dp"
+                android:id="@+id/btn_follow_detail_header"
+                android:layout_width="0dp"
+                android:layout_weight="2"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="66dp"
                 android:background="@drawable/button_shape"
                 android:text="Following"
                 android:textColor="#FFFFFF"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/ivPhotoCover"
+            android:id="@+id/ivPhotoCover_detail_header"
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/layout_title"
+            android:scaleType="centerCrop"
+            android:layout_below="@+id/layout_title_detail_header"
             android:layout_marginTop="7dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ivPhotoCover"
+            android:layout_below="@id/ivPhotoCover_detail_header"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvLabel"
+                android:id="@+id/tvLabel_detail_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="avbadasdasdasd"
                 android:textSize="19sp" />
 
             <TextView
-                android:id="@+id/tvHashTag"
+                android:id="@+id/tvHashTag_detail_header"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
@@ -81,16 +86,15 @@
 
     </RelativeLayout>
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageView"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/imageView_like_detail_header"
         android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_height="39dp"
         android:layout_marginEnd="13dp"
         android:layout_marginRight="13dp"
         android:src="@drawable/icon_favourite"
-        android:background="@color/base_green"
-        app:layout_anchor="@id/ivPhotoCover"
+        android:backgroundTint="@color/colorPrimary_purple"
+        app:layout_anchor="@id/ivPhotoCover_detail_header"
         app:layout_anchorGravity="bottom|right|end"/>
-
 
 </android.support.design.widget.CoordinatorLayout>

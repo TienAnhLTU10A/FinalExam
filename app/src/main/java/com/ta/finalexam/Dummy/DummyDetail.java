@@ -1,19 +1,30 @@
 package com.ta.finalexam.Dummy;
 
-import android.widget.ImageView;
-import android.widget.TextView;
-
 /**
- * Created by Veteran Commander on 10/19/2016.
+ * Created by Veteran Commander on 10/26/2016.
  */
 
 public class DummyDetail {
+
     public int userAva;
-    public int cmAva;
-    public ImageView ivContent;
-    public TextView tvUsername;
-    public TextView tvDes;
-    public TextView tvComment;
+    public String username;
+    public int imContent;
+    public String label;
+    public String hashtag;
 
+    public int userAvaCm;
+    public String comment;
 
+    public DummyDetail(int userAva, String username, int imContent, String label, String hashtag) {
+        this.userAva = userAva;
+        this.username = username;
+        this.imContent = imContent;
+        this.label = label;
+        this.hashtag = hashtag;
+    }
+
+    public DummyDetail(int userAva, String comment) {
+        this.userAvaCm = userAva;
+        this.comment = comment;
+    }
 }

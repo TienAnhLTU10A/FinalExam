@@ -8,4 +8,17 @@
     <color name="colorPrimary_purple">#7e68d3</color>
     <color name="colorPurpleTransparent">#a07d67d2</color>
     <color name="color_btn_skip_bg">#4bc1fe</color>
+    <color name="linemenu">#2c2449</color>
+
+    <color name="black_transparent">#a0211845</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="color_btn_fap">#4bc0fe</color>
+    <color name="edittext_stroke">#FFB2A3E4</color>
+
+    <color name="color_switch_ocean">#FF4BC0FE</color>
+    <color name="color_switch_inactive_grey">#FFC2C2C2</color>
+
+    <color name="color_drawer_header">#FF594993</color>
+    <color name="color_drawer_backgroud">#FF2C2449</color>
+    <color name="color_drawer_decorate">#FFABA3C8</color>
 </resources>
