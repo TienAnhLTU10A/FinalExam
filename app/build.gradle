@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.ta.finalexam"
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -48,5 +48,4 @@ dependencies {
     compile 'com.github.danylovolokh:hashtag-helper:1.1.0'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'me.villani.lorenzo.android:android-cropimage:1.1.+'
 }

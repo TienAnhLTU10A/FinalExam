@@ -32,7 +32,7 @@
         app:layout_anchor="@id/vpHome"
         app:layout_anchorGravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:layout_behavior="com.ta.finalexam.Helper.ScrollAwareFABBehavior" />
+        app:layout_behavior="com.ta.finalexam.Helper.animate.ScrollAwareFABBehavior" />
 
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,6 +1,5 @@
 package com.ta.finalexam.Activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,7 +8,7 @@ import android.widget.TextView;
 
 import com.ta.finalexam.Bean.HeaderControlBean;
 import com.ta.finalexam.Constant.HeaderOption;
-import com.ta.finalexam.Fragment.FragmentImageUpload;
+import com.ta.finalexam.Fragment.FragmentHome;
 import com.ta.finalexam.R;
 
 import butterknife.BindView;
@@ -37,7 +36,7 @@ public class MainActivity extends CommonActivity {
     @BindView(R.id.headerTitle)
     TextView tvTitle;
 
-    FragmentImageUpload fragmentImageUpload;
+
     @Override
     protected String getNoConnectionMessage() {
         return getString(R.string.dialog_error_no_connection);
@@ -60,8 +59,7 @@ public class MainActivity extends CommonActivity {
 
     @Override
     public void initView() {
-        fragmentImageUpload = FragmentImageUpload.newInstance();
-        setUpInitScreen(fragmentImageUpload, null);
+        setUpInitScreen(FragmentHome.newInstance(), null);
     }
 
     @Override
@@ -152,9 +150,4 @@ public class MainActivity extends CommonActivity {
         subject.setVisibility(subject == target ? View.VISIBLE : View.GONE);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        fragmentImageUpload.onActivityResult1(requestCode, resultCode, data);
-    }
 }
