@@ -4,13 +4,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.github.siyamed.shapeimageview.RoundedImageView;
+import com.ta.finalexam.Bean.Member;
 import com.ta.finalexam.Dummy.DummyFollowItem;
 import com.ta.finalexam.R;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import vn.app.base.adapter.viewholder.OnClickViewHolder;
+import vn.app.base.imageloader.ImageLoader;
 import vn.app.base.util.StringUtil;
 
 /**
@@ -39,8 +42,8 @@ public class FollowListViewHolder extends OnClickViewHolder {
         super(itemView);
     }
 
-    public void bind(DummyFollowItem dummyFollowItem){
-        ivAvatar.setImageResource(dummyFollowItem.ResID);
-        StringUtil.displayText(dummyFollowItem.followName,tvFollowName);
+    public void bind(Member member){
+        ImageLoader.loadImage(itemView.getContext(),member.avatar,ivAvatar);
+        StringUtil.displayText(member.username,tvFollowName);
     }
 }

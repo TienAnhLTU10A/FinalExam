@@ -8,10 +8,8 @@ import android.widget.TextView;
 
 import com.ta.finalexam.Bean.HeaderControlBean;
 import com.ta.finalexam.Constant.HeaderOption;
-import com.ta.finalexam.Fragment.FollowFragment;
+import com.ta.finalexam.Fragment.FollowlistFragment;
 import com.ta.finalexam.Fragment.ImageDetailFragment;
-import com.ta.finalexam.Fragment.NearbyFragment;
-import com.ta.finalexam.Fragment.TutorialFragment;
 
 import butterknife.BindView;
 import vn.app.base.activity.CommonActivity;
@@ -63,7 +61,7 @@ public class MainActivity extends CommonActivity {
     @Override
     public void initView() {
 //        setUpInitScreen( TutorialFragment.newInstance(), null);
-        setUpInitScreen( new ImageDetailFragment(), null);
+        setUpInitScreen( new FollowlistFragment(), null);
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.ta.finalexam.Adapter;
 import android.view.ViewGroup;
 
 import com.ta.finalexam.Adapter.ViewHolder.FollowListViewHolder;
+import com.ta.finalexam.Bean.Member;
 import com.ta.finalexam.Dummy.DummyFollowItem;
 
 import java.util.List;
@@ -15,10 +16,10 @@ import vn.app.base.util.UiUtil;
  */
 
 public class FollowListAdapter extends AdapterWithItemClick<FollowListViewHolder> {
-    public List<DummyFollowItem> dummyFollowItemList;
+    public List<Member> memberList;
 
-    public FollowListAdapter(List<DummyFollowItem> dummyFollowItemList) {
-        this.dummyFollowItemList = dummyFollowItemList;
+    public FollowListAdapter(List<Member> members) {
+        this.memberList = members;
     }
 
     @Override
@@ -28,12 +29,12 @@ public class FollowListAdapter extends AdapterWithItemClick<FollowListViewHolder
 
     @Override
     public int getItemCount() {
-        return dummyFollowItemList.size();
+        return memberList.size();
     }
 
     @Override
     public void onBindViewHolder(FollowListViewHolder holder, int position) {
         super.onBindViewHolder(holder, position);
-        holder.bind(dummyFollowItemList.get(position));
+        holder.bind(memberList.get(position));
     }
 }

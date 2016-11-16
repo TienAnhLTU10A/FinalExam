@@ -1,25 +1,22 @@
 package com.ta.finalexam.API.Request;
 
 import com.android.volley.Request;
-import com.ta.finalexam.API.Response.TutorialResponse;
+import com.ta.finalexam.API.Response.FollowlistResponse;
 import com.ta.finalexam.Constant.ConstantVar;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import vn.app.base.api.volley.core.ObjectApiRequest;
-import vn.app.base.constant.APIConstant;
 import vn.app.base.constant.ApiParam;
 
-
 /**
- * Created by Veteran Commander on 10/21/2016.
+ * Created by Veteran Commander on 11/16/2016.
  */
 
-public class TutRequest extends ObjectApiRequest<TutorialResponse>{
+public class FollowlistRequest extends ObjectApiRequest<FollowlistResponse> {
 
-    public static final String URLTUT = "https://polar-plains-86888.herokuapp.com/api/tutorial";
-
+    public static final String URLFOLLOWLIST = "https://polar-plains-86888.herokuapp.com/api/followlist";
     @Override
     public boolean isRequiredAuthorization() {
         return true;
@@ -27,19 +24,13 @@ public class TutRequest extends ObjectApiRequest<TutorialResponse>{
 
     @Override
     public String getRequestURL() {
-        return URLTUT;
+        return URLFOLLOWLIST;
     }
 
     @Override
     public boolean isRequiredAccessToken() {
         return false;
     }
-
-    @Override
-    public Map<String, String> getRequestParams() {
-        return null;
-    }
-
 
     @Override
     public Map<String, String> getRequestHeaders() {
@@ -49,8 +40,13 @@ public class TutRequest extends ObjectApiRequest<TutorialResponse>{
     }
 
     @Override
-    public Class<TutorialResponse> getResponseClass() {
-        return TutorialResponse.class;
+    public Map<String, String> getRequestParams() {
+        return null;
+    }
+
+    @Override
+    public Class<FollowlistResponse> getResponseClass() {
+        return FollowlistResponse.class;
     }
 
     @Override
